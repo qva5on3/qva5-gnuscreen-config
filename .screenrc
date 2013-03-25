@@ -1,17 +1,20 @@
+# Don't display the copyright page
+startup_message off
+
 defutf8 on
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+caption always "%?%F%{-b bg}%:%{-b by}%?%L=%45>%?%F%{+b bg}%:%{+b by}%?%n%f*%t%{-}"
 
-defscrollback 20000
+defscrollback 200000
 ignorecase on
 
 # Default screens
 screen -t shell1  0
 screen -t shell2  1
-screen -t top     2   top
 
 # Turn on alternate screen
-altscreen 
+altscreen on
 # Turn off visual bell
 vbell off
 
@@ -21,5 +24,26 @@ attrcolor b ".I"
 # Tell screen how to set colors. AB = background, AF=foreground
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 # Erase background with current bg color
-defbce "on" ]]'
+defbce "on"
 
+
+# If you use Vim under Screen, you might find that the Esc key doesn't work. To fix this, add the following to your .screenrc: 
+# This may be necessary so Screen will wait no more than 5 milliseconds between characters when detecting an input sequence. 
+maptimeout 5
+
+# Ignores case while searching in buffer.
+ignorecase
+
+bufferfile ~/.src_buf
+
+# Bind 10-19 windows to Shift+Number sequence.
+bind ) select 10
+bind ! select 11
+bind @ select 12
+bind \043 select 13
+bind $ select 14
+bind % select 15
+bind \136 select 16
+bind & select 17
+bind * select 18
+bind ( select 19
