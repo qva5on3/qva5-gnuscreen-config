@@ -27,14 +27,17 @@ termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 defbce "on"
 
 
-# If you use Vim under Screen, you might find that the Esc key doesn't work. To fix this, add the following to your .screenrc: 
-# This may be necessary so Screen will wait no more than 5 milliseconds between characters when detecting an input sequence. 
+# If you use Vim under Screen, you might find that the Esc key doesn't work.
+# To fix this, add the following to your .screenrc: 
+# This may be necessary so Screen will wait no more than 5 milliseconds
+# between characters when detecting an input sequence. 
 maptimeout 5
 
 # Ignores case while searching in buffer.
 ignorecase
 
-bufferfile ~/.src_buf
+# Unforunately this path need to be absolute.
+bufferfile /home/lukzachu/.screen-exchange
 
 # Bind 10-19 windows to Shift+Number sequence.
 bind ) select 10
