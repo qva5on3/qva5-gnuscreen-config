@@ -4,7 +4,7 @@ startup_message off
 defutf8 on
 hardstatus alwayslastline
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
-caption always "%?%F%{-b bg}%:%{-b by}%?%L=%45>%?%F%{+b bg}%:%{+b by}%?%n%f*%t%{-}"
+caption always "%?%F%{kg}%:%{wy}%?%L=%45>%?%F%{kg}%:%{wy}%?%n%f*%t%{-}"
 
 defscrollback 200000
 ignorecase on
@@ -37,7 +37,7 @@ maptimeout 5
 ignorecase
 
 # Unforunately this path need to be absolute.
-bufferfile /home/lukzachu/.screen-exchange
+bufferfile /home/kdeveloper/.screen-exchange
 
 # Bind 10-19 windows to Shift+Number sequence.
 bind ) select 10
